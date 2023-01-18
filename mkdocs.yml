@@ -12,6 +12,7 @@ theme:
     repo: fontawesome/brands/github 
 
 markdown_extensions:
+  - admonition
   - toc:
       permalink: true
       toc_depth: 3
