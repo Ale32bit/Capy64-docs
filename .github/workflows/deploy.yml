@@ -1,2 +1,16 @@
-- name: Deploy MkDocs
-  uses: mhausenblas/mkdocs-deploy-gh-pages@1.25
+name: Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy MkDocs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@1.25
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
