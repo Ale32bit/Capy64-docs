@@ -20,7 +20,7 @@ response:close()
 
 ### checkURL
 
-`checkURL( url )`
+`http.checkURL( url )`
 
 Check whether the URL is valid and the protocol is either `http`, `https`, `ws`, or `wss`.
 
@@ -34,7 +34,7 @@ Check whether the URL is valid and the protocol is either `http`, `https`, `ws`,
 
 ### requestAsync
 
-`requestAsync( url, body?, headers?, options? )`
+`http.requestAsync( url, body?, headers?, options? )`
 
 Send an asynchronous HTTP request.
 
@@ -80,7 +80,7 @@ This event is emitted when the request failed to reach the server.
 
 ### websocketAsync
 
-`websocketAsync( url, headers )`
+`http.websocketAsync( url, headers )`
 
 Open a WebSocket connection.
 
@@ -108,6 +108,105 @@ This event is emitted when the connection is established successfully.
 1. `websocket_failure` : string - Event name.
 2. `requestId` : integer - ID of the request returned by `websocketAsync`.
 3. `message` : string? - Error message.
+
+#### Throws
+
+* If request URL is invalid. Check with `checkURL` before calling this function.
+* If WebSockets are disabled in configuration.
+* If maximum concurrent connections is reached.
+
+#### Related
+
+##### Events
+
+* [websocket_connect]()
+* [websocket_failure]()
+* [websocket_message]()
+* [websocket_close]()
+
+### request
+
+`http.request( url, body?, headers?, options? )`
+
+Send a HTTP request and wait for response.
+
+!!! Extension
+	This function is an extension implemented by CapyOS!
+
+#### Parameters
+
+1. `url` : string - The URL to request
+2. `body` : string? - The body to send.
+3. `headers` : table? - Table containing the headers to send `[HeaderKey] = HeaderValue`.
+4. `options` : table? - Table containing options.
+
+#### Returns
+
+If successful
+
+1. `response` : [HTTPResponseHandle](/Objects/Handles/HTTPResponseHandle/) - Table containing information and methods to read the body.
+
+##### OR
+
+If failed
+
+1. `nil` : nil
+2. `message` : string - Error message.
+
+### get
+
+`http.get( url, headers?, options? )`
+
+Send a HTTP GET request and wait for response.
+
+!!! Extension
+	This function is an extension implemented by CapyOS!
+
+#### Parameters
+
+1. `url` : string - The URL to request
+2. `headers` : table? - Table containing the headers to send `[HeaderKey] = HeaderValue`.
+3. `options` : table? - Table containing options.
+
+#### Returns
+
+If successful
+
+1. `response` : [HTTPResponseHandle](/Objects/Handles/HTTPResponseHandle/) - Table containing information and methods to read the body.
+
+##### OR
+
+If failed
+
+1. `nil` : nil
+2. `message` : string - Error message.
+
+### websocketAsync
+
+`http.websocketAsync( url, headers )`
+
+Open a WebSocket connection.
+
+!!! Extension
+	This function is an extension implemented by CapyOS!
+
+#### Parameters
+
+1. `url` : string - The URL to connect to.
+2. `headers` : table? - Table containing the headers to send `[HeaderKey] = HeaderValue`.
+
+#### Returns
+
+If successful
+
+1. `websocketHandle` : [WebSocketHandle](/Objects/Handles/HTTPResponseHandle) - WebSocket handle.
+
+##### OR
+
+If failed
+
+1. `nil` : nil
+2. `message` : string - Error message.
 
 #### Throws
 

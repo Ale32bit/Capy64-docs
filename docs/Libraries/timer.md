@@ -1,9 +1,6 @@
 # Timer
 
-!!! Extension
-	This library is extended: [Timer extensions](/Extensions/timer).
-
-The Timer library is schedule timers.
+The Timer library is used to schedule timers.
 
 ## Usage
 
@@ -23,7 +20,7 @@ until id == timerId
 
 ### start
 
-`start( ms )`
+`timer.start( ms )`
 
 Start a timer of `n` milliseconds.
 
@@ -46,3 +43,20 @@ This event is emitted when the scheduled timer has finished.
 
 1. `timer` : string - Event name.
 2. `timerId` : integer - ID of the timer that finished.
+
+### sleep
+
+`timer.sleep( n )`
+
+!!! Extension
+	This function is an extension implemented by CapyOS!
+
+Wait `n` milliseconds.
+
+#### Parameters
+
+1. `n` : number - Milliseconds to wait.
+
+#### Throws
+
+* If `n` is less than 1.
