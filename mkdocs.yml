@@ -1,0 +1,23 @@
+site_name: Capy64
+site_url: https://example.com/
+repo_url: https://github.com/Ale32bit/Capy64
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep orange
+    accent: deep orange
+  icon:
+    repo: fontawesome/brands/github 
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+extra_css:
+  - css/extra.css
