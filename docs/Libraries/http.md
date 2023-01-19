@@ -1,6 +1,6 @@
 # HTTP
 
-The HTTP library is used to do HTTP requests and open WebSocket connections.
+The HTTP library is used to send HTTP requests and open WebSocket connections.
 
 !!! Warning
 
@@ -51,32 +51,12 @@ Send an asynchronous HTTP request.
 
 #### Emits
 
-##### http_response
-
-This event is emitted when the server responded to the request.
-
-1. `http_response` : string - Event name.
-2. `requestId` : integer - ID of the request returned by `requestAsync`.
-3. `response` : [HTTPResponseHandle](/Objects/Handles/HTTPResponseHandle/) - Table containing information and methods to read the body.
-
-##### http_failure
-
-This event is emitted when the request failed to reach the server.
-
-1. `http_failure` : string - Event name.
-2. `requestId` : integer - ID of the request returned by `requestAsync`.
-3. `message` : string? - Error message.
+* [http_response](/Events/http_response/)
+* [http_failure](/Events/http_failure/)
 
 #### Throws
 
 * If request URL is invalid. Check with `checkURL` before calling this function.
-
-#### Related
-
-##### Events
-
-* [http_response]()
-* [http_failure]()
 
 ### websocketAsync
 
@@ -95,19 +75,8 @@ Open a WebSocket connection.
 
 #### Emits
 
-##### websocket_connect
-
-This event is emitted when the connection is established successfully.
-
-1. `websocket_connect` : string - Event name.
-2. `requestId` : integer - ID of the request returned by `websocketAsync`.
-3. `websocketHandle` : [WebSocketHandle](/Objects/Handles/HTTPResponseHandle) - WebSocket handle.
-
-##### websocket_failure
-
-1. `websocket_failure` : string - Event name.
-2. `requestId` : integer - ID of the request returned by `websocketAsync`.
-3. `message` : string? - Error message.
+* [websocket_connect](/Events/websocket_connect/)
+* [websocket_failure](/Events/websocket_failure/)
 
 #### Throws
 
@@ -119,10 +88,10 @@ This event is emitted when the connection is established successfully.
 
 ##### Events
 
-* [websocket_connect]()
-* [websocket_failure]()
-* [websocket_message]()
-* [websocket_close]()
+* [websocket_connect](/Events/websocket_connect/)
+* [websocket_failure](/Events/websocket_failure/)
+* [websocket_message](/Events/websocket_message/)
+* [websocket_close](/Events/websocket_close/)
 
 ### request
 
@@ -181,9 +150,9 @@ If failed
 1. `nil` : nil
 2. `message` : string - Error message.
 
-### websocketAsync
+### websocket
 
-`http.websocketAsync( url, headers )`
+`http.websocket( url, headers )`
 
 Open a WebSocket connection.
 
@@ -199,7 +168,7 @@ Open a WebSocket connection.
 
 If successful
 
-1. `websocketHandle` : [WebSocketHandle](/Objects/Handles/HTTPResponseHandle) - WebSocket handle.
+1. `websocketHandle` : [WebSocketHandle](/Objects/Handles/WebSocketHandle) - WebSocket handle.
 
 ##### OR
 
@@ -218,7 +187,7 @@ If failed
 
 ##### Events
 
-* [websocket_connect]()
-* [websocket_failure]()
-* [websocket_message]()
-* [websocket_close]()
+* [websocket_connect](/Events/websocket_connect/)
+* [websocket_failure](/Events/websocket_failure/)
+* [websocket_message](/Events/websocket_message/)
+* [websocket_close](/Events/websocket_close/)

@@ -37,12 +37,7 @@ Start a timer of `n` milliseconds.
 
 #### Emits
 
-##### timer
-
-This event is emitted when the scheduled timer has finished.
-
-1. `timer` : string - Event name.
-2. `timerId` : integer - ID of the timer that finished.
+* [timer](/Events/timer)
 
 ### sleep
 

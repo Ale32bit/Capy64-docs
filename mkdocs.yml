@@ -1,6 +1,10 @@
 site_name: Capy64
 site_url: https://example.com/
-repo_url: https://github.com/Ale32bit/Capy64
+repo_url: https://github.com/Capy64/Capy64
+repo_name: Capy64/Capy64
+edit_uri: https://github.com/Capy64/capy64.github.io/blob/main/docs/
+
+copyright: Capy64 &copy; 2023 AlexDevs
 
 theme:
   name: material
@@ -10,9 +14,24 @@ theme:
     accent: deep orange
   icon:
     repo: fontawesome/brands/github 
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - content.action.edit
+
 
 markdown_extensions:
   - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  - pymdownx.superfences 
   - toc:
       permalink: true
       toc_depth: 3
@@ -22,3 +41,9 @@ markdown_extensions:
 
 extra_css:
   - css/extra.css
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      type: date
