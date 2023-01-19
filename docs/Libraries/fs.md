@@ -1,4 +1,4 @@
-# FS
+# FileSystem
 
 The FileSystem library provides function to manipulate files and directories.
 

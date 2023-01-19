@@ -97,7 +97,7 @@ Write the next 16-bit floating point number.
 
 1. `value` : number - 16-bit floating point number.
 
-### writeHalf
+### writeFloat
 
 `handle:writeFloat( value )`
 

@@ -104,7 +104,7 @@ Get the next 16-bit floating point number.
 
 1. `value` : number - 16-bit floating point number.
 
-### nextHalf
+### nextFloat
 
 `handle:nextFloat()`
 
