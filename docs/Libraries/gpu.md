@@ -1,21 +1,66 @@
-# Graphics
+# GPU
 
-The Graphics library is used to draw on the screen.
+The GPU library is used to manipulate and draw on the screen.
 
 ## Usage
 
 ```lua
-local graphics = require("graphics")
+local gpu = require("gpu")
 
 -- Draw a magenta rectangle starting at 10, 15
 -- of size 27x65 with a border size of 4 pixels
-graphics.drawRectangle(10, 15, 27, 65, 0xff00ff, 4)
+gpu.drawRectangle(10, 15, 27, 65, 0xff00ff, 4)
+
+local width, height = gpu.getSize()
+print(string.format("The screen size is %s by %s", width, height))
 ```
 
 !!! Warning
     All coordinates start from 1, 1
 
 ## Functions
+
+### getSize
+
+`screen.getSize()`
+
+Get the size of the screen
+
+#### Returns
+
+1. `width` : integer - Width of screen
+1. `height` : integer - Height of screen
+
+### setSize
+
+`screen.setSize()`
+
+Set the size of the screen
+
+#### Parameters
+
+1. `width` : integer - Width of screen
+2. `height` : integer - Height of screen
+
+### getScale
+
+`screen.getScale()`
+
+Get the scale of the screen
+
+#### Returns
+
+1. `scale` : number - Scale of screen
+
+### setScale
+
+`screen.setScale()`
+
+Set the scale of the screen
+
+#### Parameters
+
+1. `scale` : Number - Scale of screen
 
 ### plot
 
