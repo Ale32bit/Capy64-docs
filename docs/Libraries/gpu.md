@@ -22,7 +22,7 @@ print(string.format("The screen size is %s by %s", width, height))
 
 ### getSize
 
-gpu.getSize()`
+`gpu.getSize()`
 
 Get the size of the screen
 
@@ -33,7 +33,7 @@ Get the size of the screen
 
 ### setSize
 
-gpu.setSize()`
+`gpu.setSize()`
 
 Set the size of the screen
 
@@ -44,7 +44,7 @@ Set the size of the screen
 
 ### getScale
 
-gpu.getScale()`
+`gpu.getScale()`
 
 Get the scale of the screen
 
@@ -54,7 +54,7 @@ Get the scale of the screen
 
 ### setScale
 
-gpu.setScale()`
+`gpu.setScale()`
 
 Set the scale of the screen
 
