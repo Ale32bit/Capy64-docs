@@ -22,7 +22,7 @@ print(string.format("The screen size is %s by %s", width, height))
 
 ### getSize
 
-`screen.getSize()`
+gpu.getSize()`
 
 Get the size of the screen
 
@@ -33,7 +33,7 @@ Get the size of the screen
 
 ### setSize
 
-`screen.setSize()`
+gpu.setSize()`
 
 Set the size of the screen
 
@@ -44,7 +44,7 @@ Set the size of the screen
 
 ### getScale
 
-`screen.getScale()`
+gpu.getScale()`
 
 Get the scale of the screen
 
@@ -54,7 +54,7 @@ Get the scale of the screen
 
 ### setScale
 
-`screen.setScale()`
+gpu.setScale()`
 
 Set the scale of the screen
 
@@ -62,9 +62,26 @@ Set the scale of the screen
 
 1. `scale` : Number - Scale of screen
 
+### getPixel
+
+`gpu.getPixel( x, y )`
+
+Get the color of pixel at X,Y.
+
+The color returned is black (#000000) if out of bounds.
+
+#### Parameters
+
+1. `x` : number - X coordinate.
+2. `y` : number - Y coordinate.
+
+#### Returns
+
+1. `color` : integer - Decimal RGB color.
+
 ### plot
 
-`#!lua graphics.plot( x, y, color )`
+`#!lua gpu.plot( x, y, color )`
 
 Draw a pixel on the screen.
 
@@ -76,7 +93,7 @@ Draw a pixel on the screen.
 
 ### plots
 
-`#!lua graphics.plots( { x1, y1, x2, y2, ..., xn, yn}, color )`
+`#!lua gpu.plots( { x1, y1, x2, y2, ..., xn, yn}, color )`
 
 Draw multiple pixels on the screen.
 
@@ -92,7 +109,7 @@ Draw multiple pixels on the screen.
 
 ### drawPoint
 
-`#!lua graphics.drawPoint( x, y, color, size? = 1)`
+`#!lua gpu.drawPoint( x, y, color, size? = 1)`
 
 Draw a square point.
 
@@ -105,7 +122,7 @@ Draw a square point.
 
 ### drawCircle
 
-`#!lua graphics.drawCircle( x, y, radius, color, size? = 1 )`
+`#!lua gpu.drawCircle( x, y, radius, color, size? = 1 )`
 
 Draw a circle.
 
@@ -119,7 +136,7 @@ Draw a circle.
 
 ### drawLine
 
-`#!lua graphics.drawLine( startX, startY, endX, endY, color, size? = 1 )`
+`#!lua gpu.drawLine( startX, startY, endX, endY, color, size? = 1 )`
 
 Draw a line.
 
@@ -134,7 +151,7 @@ Draw a line.
 
 ### drawRectangle
 
-`#!lua graphics.drawRectangle( x, y, width, height, color, size? = 1 )`
+`#!lua gpu.drawRectangle( x, y, width, height, color, size? = 1 )`
 
 Draw a rectangle.
 
@@ -152,7 +169,7 @@ Draw a rectangle.
 
 ### drawPolygon
 
-`#!lua graphics.drawPolygon( x, y, { x1, y1, x2, y2, ..., xn, yn}, color, size? = 1 )`
+`#!lua gpu.drawPolygon( x, y, { x1, y1, x2, y2, ..., xn, yn}, color, size? = 1 )`
 
 Draw a polygon.
 
@@ -171,7 +188,7 @@ Draw a polygon.
 
 ### drawEllipse
 
-`#!lua graphics.drawEllipse( x, y, radiusX, radiusY, color, size? = 1 )`
+`#!lua gpu.drawEllipse( x, y, radiusX, radiusY, color, size? = 1 )`
 
 Draw an ellipse.
 
@@ -186,7 +203,7 @@ Draw an ellipse.
 
 ### drawString
 
-`#!lua graphics.drawString( x, y, color, text )`
+`#!lua gpu.drawString( x, y, color, text )`
 
 Draw a string.
 
@@ -199,7 +216,7 @@ Draw a string.
 
 ### measureString
 
-`#!lua graphics.measureString( text )`
+`#!lua gpu.measureString( text )`
 
 Get the bounds of the string.
 
