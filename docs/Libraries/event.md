@@ -29,8 +29,7 @@ Wait for events.
 #### Returns
 
 1. `eventName` : string - Name of the event.
-
-...n. `parameter` : any - Any parameter related to the event pulled.
+1. `...parameter` : any - Any parameter related to the event pulled.
 
 #### Throws
 
@@ -52,5 +51,15 @@ Wait for events.
 #### Returns
 
 1. `eventName` : string - Name of the event.
+1. `...parameter` : any - Any parameter related to the event pulled.
 
-...n. `parameter` : any - Any parameter related to the event pulled.
+### push
+
+`event.push( eventName [, ...])`
+
+Push an event to the queue.
+
+### Parameters
+
+1. `eventName` : string - Name of the event.
+2. `...parameters` : any? - Optional parameters.
