@@ -228,3 +228,35 @@ Get the bounds of the string.
 
 1. `width` : number - Width of the text.
 2. `height` : number - Height of the text.
+
+### getBuffer
+
+`gpu.getBuffer()`
+
+Get a unsigned 32-bit integer buffer of all colors in the screen in 0xRRGGBB format.
+
+#### Returns
+
+1. `gpuBuffer` : [GPUBuffer](/Objects/GPUBuffer/) - GPU Buffer
+
+### setBuffer
+
+`gpu.setBuffer( gpuBuffer )`
+
+Set the screen buffer.
+
+#### Parameters
+
+1. `gpuBuffer` : [GPUBuffer](/Objects/GPUBuffer/) - GPU Buffer
+
+### newBuffer
+
+`gpu.newBuffer()`
+
+Create a new empty buffer.
+
+The buffer is already sized for the current screen size.
+
+#### Returns
+
+1. `gpuBuffer` : [GPUBuffer](/Objects/GPUBuffer/) - Empty GPU Buffer

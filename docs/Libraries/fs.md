@@ -208,15 +208,15 @@ Copy a file from source to a destination path.
 
 1. `path` : string - Path to delete.
 
-### getAttributes
+### attributes
 
-`fs.getAttributes( path )`
+`fs.attributes( path )`
 
 Get attributes of a path.
 
 #### Parameters
 
-`path` : string - Path.
+1. `path` : string - Path.
 
 #### Returns
 
@@ -226,3 +226,17 @@ Get attributes of a path.
    3. `isReadOnly` : boolean - Whether the path is read only.
    4. `created` : integer - Timestamp of creation date of the path.
    5. `modified` : integer - Timestamp of last modified date of the path.
+
+### isDir
+
+`fs.isDir( path )`
+
+Check whether a path is a directory
+
+#### Parameters
+
+1. `path` : string - Path.
+
+#### Returns
+
+1. `isDirectory` : boolean - Whether there is a directory in the path.
