@@ -1,43 +1,18 @@
-# WebSocketHandle
+# WebSocketClient
 
-WebSocketHandle provides methods to communicate with the server and properties about the response.
-
-## Properties
-
-### success
-
-`success`: boolean
-
-Whether the request was successful.
-
-### statusCode
-
-`statusCode` : number
-
-HTTP Status code of the response.
-
-### reasonPhrase
-
-`reasonPhrase` : string
-
-Message of the status code.
-
-### headers
-
-`headers` : table
-
-Key-value pairs of all headers received.
-
-### requestId
-
-`requestId` : integer
-
-ID of the request.
-
-!!! Extension
-	This property is an extension implemented by CapyOS!
+WebSocketClient provides methods to communicate with the server.
 
 ## Methods
+
+### getRequestID
+
+`handle:getRequestID()`
+
+Get the ID of the request.
+
+#### Returns
+
+1. `requestId` : integer - ID of the request.
 
 ### send
 

@@ -76,15 +76,11 @@ Set the size of the terminal.
 
 `getForeground()`
 
-Get the R, G and B values of the current text color.
-
-Values range from 0 to 255.
+Get the decimal RGB value of the current text color.
 
 #### Returns
 
-1. `r` : integer - Red value
-2. `g` : integer - Green value
-3. `b` : integer - Blue value
+1. `rgb` : integer - Decimal RGB value
 
 ### setForeground
 
@@ -110,15 +106,11 @@ Value is hex color 0xRRGGBB (e.g. `0xff7700`).
 
 `getBackground()`
 
-Get the R, G and B values of the current background color.
-
-Values range from 0 to 255.
+Get the decimal RGB value of the current background color.
 
 #### Returns
 
-1. `r` : integer - Red value
-2. `g` : integer - Green value
-3. `b` : integer - Blue value
+1. `rgb` : integer - Decimal RGB value
 
 ### setBackground
 

@@ -15,7 +15,7 @@ This can either generate a checkerboard pattern or a vertical lines pattern depe
 
 ```lua
 local gpu = require("gpu")
-local buffer = gpu.newBuffer()
+local buffer<close> = gpu.newBuffer()
 
 for i = 0, #buffer - 1 do
     if i % 2 == 0 then

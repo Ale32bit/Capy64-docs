@@ -113,7 +113,13 @@ Send a HTTP request and wait for response.
 
 If successful
 
-1. `response` : [HTTPResponseHandle](/Objects/Handles/HTTPResponseHandle/) - Table containing information and methods to read the body.
+1. `response` - Response body content
+
+   If binary: [BinaryReadHandle](/Objects/Handles/BinaryReadHandle/)
+
+   If text: [ReadHandle](/Objects/Handles/ReadHandle/)
+
+2. `information` : [HTTPData](/Objects/Handles/HTTPData/) - Table containing information about the response.
 
 ##### OR
 
@@ -141,7 +147,48 @@ Send a HTTP GET request and wait for response.
 
 If successful
 
-1. `response` : [HTTPResponseHandle](/Objects/Handles/HTTPResponseHandle/) - Table containing information and methods to read the body.
+1. `response` - Response body content
+
+   If binary: [BinaryReadHandle](/Objects/Handles/BinaryReadHandle/)
+
+   If text: [ReadHandle](/Objects/Handles/ReadHandle/)
+
+2. `information` : [HTTPData](/Objects/Handles/HTTPData/) - Table containing information about the response.
+
+##### OR
+
+If failed
+
+1. `nil` : nil
+2. `message` : string - Error message.
+
+### post
+
+`http.post( url, body?, headers?, options? )`
+
+Send a HTTP GET request and wait for response.
+
+!!! Extension
+	This function is an extension implemented by CapyOS!
+
+#### Parameters
+
+1. `url` : string - The URL to request
+2. `body` : string - Body of the request
+3. `headers` : table? - Table containing the headers to send `[HeaderKey] = HeaderValue`.
+4. `options` : table? - Table containing options.
+
+#### Returns
+
+If successful
+
+1. `response` - Response body content
+
+   If binary: [BinaryReadHandle](/Objects/Handles/BinaryReadHandle/)
+
+   If text: [ReadHandle](/Objects/Handles/ReadHandle/)
+
+2. `information` : [HTTPData](/Objects/Handles/HTTPData/) - Table containing information about the response.
 
 ##### OR
 

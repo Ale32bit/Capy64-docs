@@ -1,9 +1,6 @@
-# HTTPResponseHandle
+# HTTPData
 
-HTTPResponseHandle provides methods to read the body of the response and properties about the response.
-
-!!! Note
-	This object extends [ReadHandle](/Objects/Handles/ReadHandle)
+HTTPData provides methods to read the body of the response and properties about the response.
 
 ## Properties
 

@@ -7,6 +7,34 @@ BinaryReadHandle provides methods to read a stream of binary data.
 !!! Warning
 	The following methods will return `nil` if the EOF is reached.
 
+### readAll
+
+`handle:readAll()`
+
+Read all data from current position to the end of file.
+
+#### Returns
+
+1. `data` : string - File data
+
+### seek
+
+`handle:seek( [whence [, offset]] )`
+
+Change the position of the stream.
+
+#### Parameters
+
+1. `whence` : string - The position moves relative to
+   * `set`: From the start of the file (absolute).
+   * `cur`: From the current position, is default.
+   * `end`: From the end of the file.
+2. `offset` : integer - Offset of the new position relative to whence. Defaults to 0.
+
+#### Returns
+
+1. `position` : integer - New position.
+
 ### nextByte
 
 `handle:nextByte( [count] )`

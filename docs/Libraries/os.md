@@ -20,11 +20,11 @@ The following features are removed due to sandboxing issues or better alternativ
 
 `os.version()`
 
-Get Capy64 version.
+Get the CapyOS version.
 
 #### Returns
 
-1. `version` : string - Version of Capy64
+1. `version` : string - Version of CapyOS
 
 ### shutdown
 
