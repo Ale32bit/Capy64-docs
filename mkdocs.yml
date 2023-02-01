@@ -10,7 +10,7 @@ theme:
   name: material
   palette:
     scheme: slate
-    primary: deep orange
+    primary: grey
     accent: deep orange
   icon:
     repo: fontawesome/brands/github 
@@ -21,6 +21,8 @@ theme:
     - navigation.sections
     - navigation.indexes
     - content.action.edit
+  logo: assets/logo.png
+  favicon: assets/logo.png
 
 
 markdown_extensions:
@@ -44,3 +46,6 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: true
       type: date
+
+extra_css:
+  - css/extra.css
