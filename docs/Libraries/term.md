@@ -176,6 +176,34 @@ Set the status of the cursor blink.
 
 1. `enable` : boolean - Whether to blink.
 
+### blit
+
+`term.blit( text, foreground, background )`
+
+Write a text to the screen with foreground and background.
+
+Text, foreground and background must be the same length.
+
+#### Parameters
+
+1. `text` : string - Text to write on terminal.
+2. `foreground` : table - Foreground of each character.
+3. `background` : table - Background of each character.
+
+#### Example
+
+```lua
+term.blit(
+    "Hello",
+    {
+        0xff0000, 0x00ff00, 0x0000ff, 0xff00ff, 0x00ffff
+    },
+    {
+        0x0000ff, 0xff0000, 0x00ff00, 0x00ffff, 0xff00ff
+    }
+)
+```
+
 ### toRealPos
 
 `toRealPos( x, y )`

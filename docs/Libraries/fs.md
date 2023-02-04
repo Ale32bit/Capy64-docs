@@ -202,11 +202,14 @@ Copy a file from source to a destination path.
 
 ### delete
 
-`fs.delete( path )`
+`fs.delete( path, [ recursive ] )`
+
+Delete a path. Enable `recursive` to delete a directory with files.
 
 #### Parameters
 
 1. `path` : string - Path to delete.
+2. `recursive` : boolean - Delete path recursively.
 
 ### attributes
 

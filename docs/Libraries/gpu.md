@@ -251,12 +251,32 @@ Set the screen buffer.
 
 ### newBuffer
 
-`gpu.newBuffer()`
+`gpu.newBuffer( [width, height] )`
 
 Create a new empty buffer.
 
-The buffer is already sized for the current screen size.
+The buffer is already sized for the current screen size, unless width and height are defined.
+
+#### Parameters
+
+1. `width` : integer - Width of the buffer.
+2. `height` : integer - Height of the buffer.
 
 #### Returns
 
 1. `gpuBuffer` : [GPUBuffer](/Objects/GPUBuffer/) - Empty GPU Buffer
+
+### drawBuffer
+
+`gpu.drawBuffer( buffer, x, y, width, height )`
+
+Draw a buffer to the screen at an arbitrary location.
+
+#### Parameters
+
+1. `buffer` : [GPUBuffer](/Objects/GPUBuffer/) - Buffer to draw
+2. `x` : integer - X coordinate.
+2. `y` : integer - Y coordinate.
+2. `width` : integer - Width of the buffer.
+2. `height` : integer - Height of the buffer.
+
