@@ -89,6 +89,13 @@ Set the Discord RPC texts if enabled.
 
 `machine.vibrate( leftStrength, [ rightStrength ] )`
 
-Vibrates the connected gamepad with given left and right strengths.  `rightStrength` defaults to `leftStrength` if one is not given.
+Vibrates the connected gamepad with given left and right strengths.  
+Left is low frequency, so it may feel stronger than right.  
+`rightStrength` defaults to `leftStrength` if one is not given.
 
-This only works if at least one is connected.  If multiple are connected, vibrates the primary gamepad.
+This only works if at least one gamepad is connected.  If multiple are connected, it vibrates the primary gamepad.
+
+#### Parameters
+
+1. `leftStrength` : number - Left vibration strength. (Low frequency.)
+2. `rightStrength` : number? - Right vibration strength.  (High frequency.)
