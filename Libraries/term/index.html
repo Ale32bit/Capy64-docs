@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://capy64.alexdevs.me/Libraries/term/">
+      
+      
+        <link rel="prev" href="../os/">
+      
+      
+        <link rel="next" href="../timer/">
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Term - Capy64</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#term" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Capy64" class="md-header__button md-logo" aria-label="Capy64" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Capy64
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Term
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Ale32bit/Capy64" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ale32bit/Capy64
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Events/" class="md-tabs__link">
+        Events
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Libraries
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Objects/GPUBuffer/" class="md-tabs__link">
+        Objects
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Capy64" class="md-nav__button md-logo" aria-label="Capy64" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Capy64
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Ale32bit/Capy64" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ale32bit/Capy64
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Events/">Events</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/audio_end/" class="md-nav__link">
+        audio_end
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/char/" class="md-nav__link">
+        char
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/http_failure/" class="md-nav__link">
+        http_failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/http_response/" class="md-nav__link">
+        http_response
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/interrupt/" class="md-nav__link">
+        interrupt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/key_down/" class="md-nav__link">
+        key_down
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/key_up/" class="md-nav__link">
+        key_up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/mouse_down/" class="md-nav__link">
+        mouse_down
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/mouse_move/" class="md-nav__link">
+        mouse_move
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/mouse_scroll/" class="md-nav__link">
+        mouse_scroll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/mouse_up/" class="md-nav__link">
+        mouse_up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/paste/" class="md-nav__link">
+        paste
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/screen_resize/" class="md-nav__link">
+        screen_resize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/timer/" class="md-nav__link">
+        timer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/websocket_close/" class="md-nav__link">
+        websocket_close
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/websocket_connect/" class="md-nav__link">
+        websocket_connect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/websocket_failure/" class="md-nav__link">
+        websocket_failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/websocket_message/" class="md-nav__link">
+        websocket_message
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Libraries</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event/" class="md-nav__link">
+        Event
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs/" class="md-nav__link">
+        FileSystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpu/" class="md-nav__link">
+        GPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        HTTP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machine/" class="md-nav__link">
+        Machine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Term
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Term
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    write
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpos" class="md-nav__link">
+    getPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpos" class="md-nav__link">
+    setPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsize" class="md-nav__link">
+    getSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsize" class="md-nav__link">
+    setSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getforeground" class="md-nav__link">
+    getForeground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setforeground" class="md-nav__link">
+    setForeground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackground" class="md-nav__link">
+    getBackground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackground" class="md-nav__link">
+    setBackground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    clear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearline" class="md-nav__link">
+    clearLine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scroll" class="md-nav__link">
+    scroll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getblink" class="md-nav__link">
+    getBlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setblink" class="md-nav__link">
+    setBlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blit" class="md-nav__link">
+    blit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torealpos" class="md-nav__link">
+    toRealPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromrealpos" class="md-nav__link">
+    fromRealPos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timer/" class="md-nav__link">
+        Timer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Objects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/GPUBuffer/" class="md-nav__link">
+        GPUBuffer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Handles
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Handles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/BinaryReadHandle/" class="md-nav__link">
+        BinaryReadHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/BinaryWriteHandle/" class="md-nav__link">
+        BinaryWriteHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/HTTPData/" class="md-nav__link">
+        HTTPData
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/ReadHandle/" class="md-nav__link">
+        ReadHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/WebSocketClient/" class="md-nav__link">
+        WebSocketClient
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Objects/Handles/WriteHandle/" class="md-nav__link">
+        WriteHandle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    write
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpos" class="md-nav__link">
+    getPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpos" class="md-nav__link">
+    setPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsize" class="md-nav__link">
+    getSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsize" class="md-nav__link">
+    setSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getforeground" class="md-nav__link">
+    getForeground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setforeground" class="md-nav__link">
+    setForeground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackground" class="md-nav__link">
+    getBackground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackground" class="md-nav__link">
+    setBackground
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    clear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearline" class="md-nav__link">
+    clearLine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scroll" class="md-nav__link">
+    scroll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getblink" class="md-nav__link">
+    getBlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setblink" class="md-nav__link">
+    setBlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blit" class="md-nav__link">
+    blit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torealpos" class="md-nav__link">
+    toRealPos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromrealpos" class="md-nav__link">
+    fromRealPos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/Ale32bit/Capy64-docs/blob/main/docs/Libraries/term.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="term">Term<a class="headerlink" href="#term" title="Permanent link">&para;</a></h1>
+<p>The Term library is used to emulate a terminal.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">local</span> <span class="n">term</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;term&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">term</span><span class="p">.</span><span class="n">setPos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">term</span><span class="p">.</span><span class="n">clearLine</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">term</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
+<p><code>write( text )</code></p>
+<p>Write a string to the terminal.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>text?</code> : string - Text to write on terminal</li>
+</ol>
+<h3 id="getpos">getPos<a class="headerlink" href="#getpos" title="Permanent link">&para;</a></h3>
+<p><code>getPos()</code></p>
+<p>Get the cursor position.</p>
+<p>Coordinates start from 1, 1.</p>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : integer - X coordinate</li>
+<li><code>y</code> : integer - Y coordinate</li>
+</ol>
+<h3 id="setpos">setPos<a class="headerlink" href="#setpos" title="Permanent link">&para;</a></h3>
+<p><code>setPos( x, y )</code></p>
+<p>Set the cursor position.</p>
+<p>Coordinate start from 1,1.</p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : number - X coordinate</li>
+<li><code>y</code> : number - Y coordinate</li>
+</ol>
+<h3 id="getsize">getSize<a class="headerlink" href="#getsize" title="Permanent link">&para;</a></h3>
+<p><code>getSize()</code></p>
+<p>Get the size of the terminal.</p>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>width</code> :  integer - Width of the terminal</li>
+<li><code>height</code> : integer - Height of the terminal</li>
+</ol>
+<h3 id="setsize">setSize<a class="headerlink" href="#setsize" title="Permanent link">&para;</a></h3>
+<p><code>setSize( width, height )</code></p>
+<p>Set the size of the terminal.</p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>width</code> : number - Width of the terminal</li>
+<li><code>height</code> : number - Height of the terminal</li>
+</ol>
+<h3 id="getforeground">getForeground<a class="headerlink" href="#getforeground" title="Permanent link">&para;</a></h3>
+<p><code>getForeground()</code></p>
+<p>Get the decimal RGB value of the current text color.</p>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>rgb</code> : integer - Decimal RGB value</li>
+</ol>
+<h3 id="setforeground">setForeground<a class="headerlink" href="#setforeground" title="Permanent link">&para;</a></h3>
+<p><code>setForeground( r, g, b )</code> or <code>setForeground( rgb )</code></p>
+<p>Set the text color.</p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<p>Values range from 0 to 255.</p>
+<ol>
+<li><code>r</code> : integer - Red value</li>
+<li><code>g</code> : integer - Green value</li>
+<li><code>b</code> : integer - Blue value</li>
+</ol>
+<h5 id="or">OR<a class="headerlink" href="#or" title="Permanent link">&para;</a></h5>
+<p>Value is hex color 0xRRGGBB (e.g. <code>0xff7700</code>).</p>
+<ol>
+<li><code>rgb</code> : integer - Decimal value of RGB combined.</li>
+</ol>
+<h3 id="getbackground">getBackground<a class="headerlink" href="#getbackground" title="Permanent link">&para;</a></h3>
+<p><code>getBackground()</code></p>
+<p>Get the decimal RGB value of the current background color.</p>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>rgb</code> : integer - Decimal RGB value</li>
+</ol>
+<h3 id="setbackground">setBackground<a class="headerlink" href="#setbackground" title="Permanent link">&para;</a></h3>
+<p><code>setBackground( r, g, b )</code> or<code>setBackground( rgb )</code></p>
+<p>Set the background color.</p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p>Values range from 0 to 255.</p>
+<ol>
+<li><code>r</code> : integer - Red value</li>
+<li><code>g</code> : integer - Green value</li>
+<li><code>b</code> : integer - Blue value</li>
+</ol>
+<h5 id="or_1">OR<a class="headerlink" href="#or_1" title="Permanent link">&para;</a></h5>
+<p>Value is hex color 0xRRGGBB (e.g. <code>0xff7700</code>).</p>
+<ol>
+<li><code>rgb</code> : integer - Decimal value of RGB combined.</li>
+</ol>
+<h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
+<p><code>clear()</code></p>
+<p>Wipes the terminal and set the background to the current set.</p>
+<h3 id="clearline">clearLine<a class="headerlink" href="#clearline" title="Permanent link">&para;</a></h3>
+<p><code>clearLine()</code></p>
+<p>Like <code>clear()</code> but only clears the horizontal line of the cursor position.</p>
+<h3 id="scroll">scroll<a class="headerlink" href="#scroll" title="Permanent link">&para;</a></h3>
+<p><code>scroll( lines )</code></p>
+<p>Scroll the terminal by <code>n</code> lines.</p>
+<p>Lines that go out of bounds are lost.</p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>lines</code> : integer - Lines to scroll</li>
+</ol>
+<h3 id="getblink">getBlink<a class="headerlink" href="#getblink" title="Permanent link">&para;</a></h3>
+<p><code>getBlink()</code></p>
+<p>Get the status of the cursor blink.</p>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>isBlinking</code> : boolean - Whether it is blinking.</li>
+</ol>
+<h3 id="setblink">setBlink<a class="headerlink" href="#setblink" title="Permanent link">&para;</a></h3>
+<p><code>setBlink( enable )</code></p>
+<p>Set the status of the cursor blink.</p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>enable</code> : boolean - Whether to blink.</li>
+</ol>
+<h3 id="blit">blit<a class="headerlink" href="#blit" title="Permanent link">&para;</a></h3>
+<p><code>term.blit( text, foreground, background )</code></p>
+<p>Write a text to the screen with foreground and background.</p>
+<p>Text, foreground and background must be the same length.</p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>text</code> : string - Text to write on terminal.</li>
+<li><code>foreground</code> : table - Foreground of each character.</li>
+<li><code>background</code> : table - Background of each character.</li>
+</ol>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">term</span><span class="p">.</span><span class="n">blit</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="s2">&quot;Hello&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="mh">0xff0000</span><span class="p">,</span> <span class="mh">0x00ff00</span><span class="p">,</span> <span class="mh">0x0000ff</span><span class="p">,</span> <span class="mh">0xff00ff</span><span class="p">,</span> <span class="mh">0x00ffff</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="p">},</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="mh">0x0000ff</span><span class="p">,</span> <span class="mh">0xff0000</span><span class="p">,</span> <span class="mh">0x00ff00</span><span class="p">,</span> <span class="mh">0x00ffff</span><span class="p">,</span> <span class="mh">0xff00ff</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="torealpos">toRealPos<a class="headerlink" href="#torealpos" title="Permanent link">&para;</a></h3>
+<p><code>toRealPos( x, y )</code></p>
+<p>Convert from terminal coordinates to screen coordinates.</p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : number - X coordinate of terminal</li>
+<li><code>y</code> : number - Y coordinate of terminal</li>
+</ol>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : integer - X coordinate of screen</li>
+<li><code>y</code> : integer - Y coordinate of screen</li>
+</ol>
+<h3 id="fromrealpos">fromRealPos<a class="headerlink" href="#fromrealpos" title="Permanent link">&para;</a></h3>
+<p><code>fromRealPos( x, y )</code></p>
+<p>Convert from screen coordinates to terminal coordinates.</p>
+<p><strong>Use this function to convert mouse event positions relative to terminal</strong></p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : number - X coordinate of screen</li>
+<li><code>y</code> : number - Y coordinate of screen</li>
+</ol>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>x</code> : integer - X coordinate of terminal</li>
+<li><code>y</code> : integer - Y coordinate of terminal</li>
+</ol>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2023</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Capy64 &copy; 2023 AlexDevs
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "content.action.edit"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>
